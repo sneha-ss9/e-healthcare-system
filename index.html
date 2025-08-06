@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Healthcare Website</title>
+    <style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ 
+        .navbar {
+    display: flex;
+    gap: 12px;
+    margin-left: 540px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-link {
+    color: #003a70;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: #003a70;
+}
+
+.nav-button {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button.login {
+    background-color: #0078a8;
+}
+
+.nav-button.signup {
+    background-color: #003a70;
+}
+
+.nav-button:hover {
+    background-color: #005a7e; /* Applies to both Login and Sign Up buttons */
+}
+.appointment-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #003a70;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
+}
+
+.appointment-button:hover {
+    background-color: #005a9e; /* Lighter shade of blue */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.speciality-link {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speciality-link:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+
+.speciality-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+    height: 58px; /* Ensuring equal height for all items */
+}
+
+.speciality-item:hover {
+    background-color: #e3f2fd; /* Light blue background on hover */
+}
+
+.speciality-image {
+    height: 50px;
+    width: 50px; /* Ensure the width and height of all images are the same */
+    transition: transform 0.3s ease;
+}
+
+.speciality-image:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover for images */
+}
+
+.speciality-item p {
+    font-size: 16px;
+    color: #003a70;
+    margin: 0;
+}
+/* Hover effect for doctor cards */
+.doctor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    background-color: #e3f2fd; /* Light blue background on hover */
+}
+
+/* Hover effect for the appointment button */
+.doctor-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #0078a8;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.doctor-card a:hover {
+    background-color: #005f79; /* Darker blue when hovering over the button */
+}
+
+/* Ensure the text and image are styled appropriately */
+.doctor-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.doctor-card h3,
+.doctor-card h5,
+.doctor-card p {
+    color: #003a70;
+    text-align: center;
+}
+
+.doctor-card h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.doctor-card h5 {
+    font-size: 13px;
+    margin: 0;
+}
+
+.doctor-card p {
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+}
+  /*footer*/
+  .social-link {
+        text-decoration: none;
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-image {
+        height: 30px;
+        width: 30px;
+        transition: transform 0.3s ease;
+    }
+
+    .social-link:hover .social-image {
+        transform: scale(1.1); /* Slight zoom effect on hover for images */
+    }
+
+    .social-link:hover {
+        transform: scale(1.02); /* Slight zoom effect on hover */
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    }
+
+    /* Styling for Social Media Icons Container */
+    .social-media-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Add space between icons */
+        margin-top: 20px;
+    }
+       /* Style for the footer buttons */
+.footer-button {
+    display: inline-block;
+    background-color: #17a2b8;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect for the buttons */
+.footer-button:hover {
+    background-color: #005a9e; /* Darker shade of blue */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+ 
+      
+
+
+    </style>
+</head>
+<body style="font-family:roboto; margin: 0; padding: 0; background-color: #ffffff; color: #333333;">
+
+    
+    <div style="background-color: #003a70; padding: 8px 20px; text-align: right; font-size: 16px; color: #fff;font-family:roboto ">
+        Contact: +91-1234567890 |  Email: <a href="mailto:info@healthcare.com" style="color: white; text-decoration: none;">info@healthcare.com</a><br>
+           
+    </div>
+
+ 
+    <div style="display: flex; align-items: center; padding: 20px; background-color: #fff; color: #003a70; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
+        
+     
+        <div style="flex-shrink: 0">
+            <img src="images/logohosp.png" alt="Healthcare Logo" style="height: 120px;width: 170px;border-radius:10px 0px 10px 0px ">
+        </div>
+        
+      <nav class="navbar">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="abouthospital.html" class="nav-link">About Us</a>
+    <a href="hospitalservices.html" class="nav-link">Services</a>
+    <a href="contact.html" class="nav-link">Contact Us</a>
+    <a href="patientlogin.html" class="nav-button login">Login</a>
+    <a href="PatientRegistration.html" class="nav-button signup">Sign Up</a>
+      </nav>
+
+
+    </div>
+
+   <div style="position: relative; text-align: center; color: white;">
+    <img src="images/banner1.png" alt="Banner Image" style="width: 100%; height: 450px; object-fit: cover;">
+    
+    <!-- Overlay Text -->
+    <div style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">
+        <h1 style="font-size: 54px; color: #003a70; font-family: roboto;">Welcome to TruHealth Hospital</h1>
+        <p style="font-size: 26px; color: #003a70; margin: 10px 0; font-family: roboto;">Your health, our priority.</p>
+        <a href="bookappointment.html" class="appointment-button">Book An Appointment</a>
+    </div>
+</div>
+
+
+    
+<div style="display: flex; padding: 20px 20px; background-color: #f8f9fa; color: #003a70;height:700px ">
+    
+    <div style="display: flex; padding: 40px 20px; background-color: #f8f9fa; color: #003a70;width:40%;font-family:roboto">
+     
+     <!-- Left Half: -->
+    <div style="flex: 1; padding: 10px; background-color: #ffffff; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); margin-right: 20px;">
+     <h2 style="font-size: 28px; margin-bottom:20px; color: #003a70;margin-left:80px ">Our Specialities</h2>
+ 
+     <!-- Speciality Item 1 -->
+     <a href="gastroenterology.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/Gastro.png" class="speciality-image">
+             <p>Gastroenterology, Hepatology & Endoscopy</p>
+         </div>
+     </a>
+ 
+     <!-- Speciality Item 2 -->
+     <a href="orthopaedics.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/ortho.png" class="speciality-image">
+             <p>Orthopaedics & Joint Replacement</p>
+         </div>
+     </a>
+ 
+     <!-- Speciality Item 3 -->
+     <a href="cardiac.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/Cardio.png" class="speciality-image">
+             <p>Cardiac Sciences</p>
+         </div>
+     </a>
+ 
+     <!-- Speciality Item 4 -->
+     <a href="liver.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/Liver.png" class="speciality-image">
+             <p>Liver Transplant and Biliary Sciences</p>
+         </div>
+     </a>
+ 
+     <!-- Speciality Item 5 -->
+     <a href="neuroscience.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/Neuro.png" class="speciality-image">
+             <p>Neuroscience</p>
+         </div>
+     </a>
+ 
+     <!-- Speciality Item 6 -->
+     <a href="oncology.html" class="speciality-link">
+         <div class="speciality-item">
+             <img src="images/oncology.png" class="speciality-image">
+             <p>Cancer Care/ Oncology</p>
+         </div>
+     </a>
+ 
+ </div>
+ 
+ 
+ </div>
+ 
+
+    
+
+
+    <!-- Right Half:  -->
+    <div style=" position: relative; text-align: center;width:100%">
+       
+        <img src="images/consultant.png" style="width: 100%; border-radius: 8px;height:670px ">
+
+        <!-- Overlay Text on Image -->
+        <div style="position: absolute; top: 15%; left: 40%; transform: translate(-50%, -50%); color:#003a70;   width: 80%;">
+            <h3 style="font-size: 28px; margin-bottom: 6px;font-family: roboto">Looking for an Expert?</h3>
+            <p style="font-size: 23px; line-height: 1.5; color: #ffffff; margin-bottom: 20px;;font-family: roboto">
+                TruHealthCare Hospital is home to some of the eminent doctors in the world.
+            </p>
+            <a href="findDoctors.html" class="appointment-button" style="display: inline-block; padding: 12px 30px; font-size: 20px; color: #ffffff; background-color:#003a70; text-decoration: none; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);font-family: roboto">Find Doctors</a>
+        </div>
+    </div>
+
+</div>
+    
+      <!-- meet out experts -->
+      <div style="padding: 40px 20px; background-color: #ffffff; color: #003a70; text-align: center; font-family: Arial, sans-serif; font-family: roboto;">
+    <h2 style="font-size: 40px; margin-bottom: 20px;">Meet Our Experts</h2>
+    
+    <div style="display: flex; justify-content: space-around; gap: 20px;">
+        
+        <!-- Doctor 1 -->
+        <div class="doctor-card">
+            <img src="images/doc1.png" alt="Dr. John Doe">
+            <h3>Dr. John Doe</h3>
+            <h5>(MD, DM, FCSI)</h5>
+            <p>Cardiologist with over 20 years of experience in heart care.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+        
+        <!-- Doctor 2 -->
+        <div class="doctor-card">
+            <img src="images/doc2.png" alt="Dr. Jane Smith">
+            <h3>Dr. Jane Smith</h3>
+            <h5>(MD, DM)</h5>
+            <p>Expert Orthopedic Surgeon known for joint replacements and spinal surgery.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+        
+        <!-- Doctor 3 -->
+        <div class="doctor-card">
+            <img src="images/doc3.png" alt="Dr. Emily Brown">
+            <h3>Dr. Emily Brown</h3>
+            <h5>(MBBS, MD)</h5>
+            <p>Oncologist specializing in cancer treatments with a focus on personalized care.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="doctor-card">
+            <img src="images/doc4.png" alt="Dr. Lucia">
+            <h3>Dr. Lucia</h3>
+            <h5>(MBBS, MD)</h5>
+            <p>Oncologist specializing in cancer treatments with a focus on personalized care.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+
+        <!-- Doctor 5 -->
+        <div class="doctor-card">
+            <img src="images/doc5.png" alt="Dr. Emily Brown">
+            <h3>Dr. Emily Brown</h3>
+            <h5>(MBBS, MD)</h5>
+            <p>Oncologist specializing in cancer treatments with a focus on personalized care.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+
+        <!-- Doctor 6 -->
+        <div class="doctor-card">
+            <img src="images/doc3.png" alt="Dr. Emily Brown">
+            <h3>Dr. Emily Brown</h3>
+            <h5>(MBBS, MD)</h5>
+            <p>Oncologist specializing in cancer treatments with a focus on personalized care.</p>
+            <a href="bookappointment.html">Book Appointment</a>
+        </div>
+
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="findDoctors.html" class="appointment-button style="text-decoration: none; font-size: 18px; color: #fff; background-color: #003a70; padding: 10px 20px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); display: inline-block; margin-top: 30px;">
+            View All
+        </a>
+    </div>
+</div>
+
+    
+    <!-- About -->
+    <div style="display: flex; padding: 40px 20px; background-color: #f8f9fa; color: #003a70; font-family:roboto;">
+    <div style="flex: 1; padding: 20px;">
+        <img src="images/hospitalimg.png" alt="Hospital Image" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div style="flex: 1; padding: 40px;">
+        <h2 style="font-size: 30px; color: #003a70;">About TruHealthCare Hospital</h2>
+        <p style="font-size: 18px; line-height: 1.6;">
+            Patient centricity and best-in-class services drive TruHealthCare Hospital. Established in 1987 by Ch. Aishi Ram Batra Public Charitable Trust, the hospital has an infrastructure of 500 beds, 14 operation theatres, 110 ICU beds, 24x7 emergency facilities, state-of-the-art diagnostic labs, and rehabilitation facilities. TruHealthCare Hospital, the first multi-speciality private hospital in Delhi, aims to bring world-class medical care within reach of everyone.
+        </p>
+        <p style="font-size: 18px; line-height: 1.6;">
+            Over the years, TruHealthCare Hospital has advanced in areas like Cancer, Cardiac, Orthopaedics, Nephrology, and Neuro Surgery, offering the latest medical care in critical and life-threatening fields.
+        </p>
+        
+        <!-- Centered "About More" Link Button -->
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="abouthospital.html" class="appointment-button style="text-decoration: none; font-size: 18px; color: #fff; background-color: #003a70; padding: 10px 20px; border-radius: 5px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); display: inline-block;">
+                About More
+            </a>
+        </div>
+    </div>
+</div>
+
+        
+    <!-- Footer -->
+<div style="background-color: #003a70; padding: 40px 20px; color: #ffffff; text-align: center; font-family: Arial, sans-serif;font-family:roboto">
+    <h2 style="font-size: 30px; margin-bottom: 20px;">Get in Touch</h2>
+    
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+        <!-- For Patients -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">For Patients</h3>
+            <p style="font-size: 15px; color: #d1d1d1;">
+           Book an Appointments<br>
+           Medical Records<br>
+           Patient Services</a>
+            </p>
+        </div>
+
+        <!-- Center of Excellence -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">Center of Excellence</h3>
+            <p style="font-size: 15px; color: #d1d1d1;">
+                Cardiology<br>
+                Oncology<br>
+                Neurology
+            </p>
+        </div>
+
+        <!-- For Corporates -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">For Corporates</h3>
+            <p style="font-size: 15px; color: #d1d1d1;">
+            Wellness Programs<br>
+            Corporate Partnerships<br>
+            Consultations
+            </p>
+        </div>
+
+        <!-- Contact Us -->
+        <div style="flex: 1; min-width: 200px; padding: 10px;">
+            <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px;">Contact Us</h3>
+            <p style="font-size: 15px; color: #d1d1d1;">
+                Phone: +91-1234567890<br>
+                Email: <a href="mailto:info@healthcare.com" style="color: #d1d1d1; text-decoration: none; transition: color 0.3s;">info@healthcare.com</a><br>
+                Address: 123, Main St, New Delhi, India
+            </p>
+        </div>
+    </div>
+
+    <!-- Link Buttons -->
+<div style="margin-top: 20px;">
+    <a href="bookappointment.html" class="footer-button">Book an Appointment</a>
+    <a href="hospitalservices.html" class="footer-button">Hospital Services</a>
+    <a href="contactus.html" class="footer-button">Contact Us</a>
+</div>
+
+
+    <!-- Social Media Links -->
+  <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <h3 style="font-size: 20px; color: #ffffff; margin-bottom: 10px; text-align: center;">Follow Us On</h3>
+    <div style="display: flex; justify-content: center; gap: 15px;">
+        <a href="https://www.facebook.com" target="_blank" class="social-link">
+            <img src="images/social-icons-1.png" alt="Facebook" class="social-image">
+        </a>
+        <a href="https://www.instagram.com" target="_blank" class="social-link">
+            <img src="images/social-icons-7.png" alt="Instagram" class="social-image">
+        </a>
+        <a href="https://www.twitter.com" target="_blank" class="social-link">
+            <img src="images/social-icons-2.png" alt="Twitter" class="social-image">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-link">
+            <img src="images/social-icons-8.png" alt="LinkedIn" class="social-image">
+        </a>
+    </div>
+</div>
+
+
+    <!-- Footer Bottom -->
+    <div style="border-top: 1px solid #d1d1d1; margin-top: 20px; padding-top: 10px;">
+        <p style="font-size: 14px; color: #d1d1d1;">&copy; 2024 TruHealthCare Hospital. All rights reserved.</p>
+    </div>
+</div>
+
+    
+</body>
+</html>
